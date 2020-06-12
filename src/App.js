@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -6,30 +6,44 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Image,
+  ScrollView,
 } from 'react-native';
 import Style from './asset/style';
+import FirstLast from './component/FirstLast/index';
+import ButtonCustom from './component/ButtonCustom/index';
+import ActivityForm from './component/ActivityForm';
+import ActivityList from './component/ActivityList';
 
 const App = () => {
+  const [username, setUsername] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [password, setPassword] = useState('');
+
+  const callbackParent = value => {
+    setUsername(value);
+    setLastname(value);
+  };
+
+  const [finalActivity, setFinalActivity] = useState([]);
+  const dataActivityParent = data => {
+    setFinalActivity(finalActivity.concat(data));
+  };
+
   return (
     <SafeAreaView style={Style.container}>
-      <Image
-        style={Style.image}
-        source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}
-      />
-      <Text style={Style.h1}>LOGIN YUK !</Text>
-      <View style={Style.form}>
-        <Text style={[Style.label, Style.font]}>Username</Text>
-        <TextInput style={Style.field} placeholder="Username..." />
-        <Text style={[Style.label, Style.font]}>Password</Text>
-        <TextInput
-          style={Style.field}
-          secureTextEntry={true}
-          placeholder="Password..."
+      <ScrollView>
+        <Image
+          style={Style.image}
+          source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}
         />
-        <TouchableOpacity style={Style.button}>
-          <Text style={[Style.font, Style.buttonFont]}>Login</Text>
-        </TouchableOpacity>
-      </View>
+        {/* <FirstLast callbackFirst={callbackParent} />
+        <ButtonCustom type="Register loh" />
+        <Text>{username}</Text>
+        <Text>{lastname}</Text> */}
+
+        <ActivityForm dataActivity={dataActivityParent} />
+        <ActivityList ListActivity={finalActivity} />
+      </ScrollView>
     </SafeAreaView>
   );
 };

@@ -1,18 +1,6 @@
 import {Stylesheet, StyleSheet} from 'react-native';
 
 const Style = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  // },
-  image: {
-    width: 100,
-    height: 100,
-    marginLeft: '40%',
-  },
-  font: {
-    fontSize: 16,
-  },
   h1: {
     fontSize: 24,
     fontWeight: '700',
@@ -34,17 +22,6 @@ const Style = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-  },
-  button: {
-    backgroundColor: 'red',
-    padding: 10,
-    marginTop: 15,
-    borderRadius: 10,
-  },
-  buttonFont: {
-    color: '#ffffff',
-    textAlign: 'center',
-    fontWeight: '700',
   },
 });
 
