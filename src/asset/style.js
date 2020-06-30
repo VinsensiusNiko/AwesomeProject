@@ -1,10 +1,10 @@
 import {Stylesheet, StyleSheet} from 'react-native';
 
 const Style = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  // },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   image: {
     width: 100,
     height: 100,
@@ -36,10 +36,12 @@ const Style = StyleSheet.create({
     padding: 10,
   },
   button: {
-    backgroundColor: 'red',
+    backgroundColor: '#f76031',
     padding: 10,
+    marginHorizontal: '25%',
     marginTop: 15,
     borderRadius: 10,
+    width: '50%',
   },
   buttonFont: {
     color: '#ffffff',
